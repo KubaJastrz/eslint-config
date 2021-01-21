@@ -2782,9 +2782,9 @@ Object {
     "import/core-modules": Array [],
     "import/extensions": Array [
       ".js",
-      ".ts",
       ".mjs",
       ".jsx",
+      ".ts",
       ".tsx",
       ".d.ts",
     ],
@@ -2807,10 +2807,10 @@ Object {
       "node": Object {
         "extensions": Array [
           ".js",
-          ".ts",
           ".jsx",
-          ".tsx",
           ".json",
+          ".ts",
+          ".tsx",
           ".d.ts",
         ],
       },

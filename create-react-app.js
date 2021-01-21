@@ -21,9 +21,9 @@ function getSeverity(ruleConfig) {
 function changeErrorToWarn(config) {
   const warningsOnly = Object.assign({}, config);
   const cli = new CLIEngine({ baseConfig: config, useEslintrc: false });
-  const baseRules = cli.getConfigForFile(require.resolve('./react')).rules;
+  const { rules } = cli.getConfigForFile(require.resolve('./react'));
 
-  Object.entries(baseRules).forEach((rule) => {
+  Object.entries(rules).forEach((rule) => {
     const ruleName = rule[0];
     const ruleConfig = rule[1];
     const severity = getSeverity(ruleConfig);

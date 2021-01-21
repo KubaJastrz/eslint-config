@@ -11,12 +11,4 @@ module.exports = {
     // https://github.com/yannickcr/eslint-plugin-react/blob/e2eaadae/docs/rules/jsx-filename-extension.md
     'react/jsx-filename-extension': 'off',
   },
-  settings: {
-    'import/resolver': {
-      node: {
-        extensions: ['.js', '.ts', '.jsx', '.tsx', '.json'],
-      },
-    },
-    'import/extensions': ['.js', '.ts', '.mjs', '.jsx', '.tsx'],
-  },
 };
