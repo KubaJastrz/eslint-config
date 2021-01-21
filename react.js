@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['./index.js', 'airbnb-typescript', 'airbnb/hooks', 'prettier/react'],
+  extends: ['airbnb-typescript', 'airbnb/hooks', 'prettier/react'],
   plugins: [],
   rules: {
     // Disable too restrictive rule
