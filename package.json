@@ -58,8 +58,5 @@
   },
   "engines": {
     "node": ">=10.23.0"
-  },
-  "publishConfig": {
-    "access": "restricted"
   }
 }
