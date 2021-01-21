@@ -1,5 +1,11 @@
 module.exports = {
-  extends: ['airbnb-typescript', 'airbnb/hooks', 'prettier/react'],
+  extends: [
+    'airbnb',
+    'airbnb/hooks',
+    './rules/prettier.js',
+    'prettier/react',
+    './rules/typescript.js',
+  ],
   plugins: [],
   rules: {
     // Disable too restrictive rule
@@ -10,5 +16,13 @@ module.exports = {
     // https://github.com/facebook/create-react-app/issues/87#issuecomment-234627904
     // https://github.com/yannickcr/eslint-plugin-react/blob/e2eaadae/docs/rules/jsx-filename-extension.md
     'react/jsx-filename-extension': 'off',
+  },
+  settings: {
+    // Append 'ts' extensions to Airbnb 'import/resolver' setting
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
+      },
+    },
   },
 };
