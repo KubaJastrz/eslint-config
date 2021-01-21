@@ -1,25 +1,51 @@
 name: Release
+
 on:
   push:
     branches:
-      - master
-jobs:
+      - '+([0-9])?(.{+([0-9]),x}).x'
+      - 'master'
+      - 'next'
+      - 'next-major'
+      - 'beta'
+      - 'alpha'
+
   release:
     name: Release
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
+    if: ${{ secrets.NPM_TOKEN }}
     steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.7.0
+        with:
+          access_token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
+
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
-          node-version: 12
+          node-version: 14
+
       - name: Install dependencies
-        run: npm ci
+        uses: bahmutov/npm-install@v1
+        with:
+          useLockFile: false
+
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npx semantic-release
+        run: cycjimmy/semantic-release-action@v2
+        with:
+          semantic_version: 17
+          branches: |
+            [
+              '+([0-9])?(.{+([0-9]),x}).x',
+              'master',
+              'next',
+              'next-major',
+              {name: 'beta', prerelease: true},
+              {name: 'alpha', prerelease: true}
+            ]
