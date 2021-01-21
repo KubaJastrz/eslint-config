@@ -13,7 +13,8 @@
   "files": [
     "base.js",
     "index.js",
-    "jest.js"
+    "jest.js",
+    "react.js"
   ],
   "scripts": {
     "lint": "eslint .",
