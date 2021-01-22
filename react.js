@@ -1,5 +1,11 @@
 module.exports = {
-  extends: ['airbnb-typescript', 'airbnb/hooks', 'prettier/react'],
+  extends: [
+    'airbnb',
+    'airbnb/hooks',
+    './rules/prettier.js',
+    'prettier/react',
+    './rules/typescript.js',
+  ],
   plugins: [],
   rules: {
     // Disable too restrictive rule
@@ -12,11 +18,11 @@ module.exports = {
     'react/jsx-filename-extension': 'off',
   },
   settings: {
+    // Append 'ts' extensions to Airbnb 'import/resolver' setting
     'import/resolver': {
       node: {
-        extensions: ['.js', '.ts', '.jsx', '.tsx', '.json'],
+        extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
       },
     },
-    'import/extensions': ['.js', '.ts', '.mjs', '.jsx', '.tsx'],
   },
 };
