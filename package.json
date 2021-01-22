@@ -11,6 +11,8 @@
     "url": "https://github.com/yyy/zzz/issues"
   },
   "files": [
+    "rules/prettier.js",
+    "rules/typescript.js",
     "base.js",
     "create-react-app.js",
     "index.js",
