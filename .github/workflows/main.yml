@@ -3,6 +3,7 @@ name: main
 on:
   push:
     branches:
+      - '+([0-9])?(.{+([0-9]),x}).x'
       - 'master'
       - 'next'
       - 'next-major'
@@ -40,19 +41,13 @@ jobs:
       - name: Test
         run: npm test
 
-      - name: Enable release if NPM_TOKEN is present
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: echo "::set-output name=enable_release::${{ env.NPM_TOKEN != '' }}"
-
   release:
     name: release
     needs: [validate]
     runs-on: ubuntu-18.04
     if: |
       github.event_name == 'push' && github.event.repository.full_name == github.repository &&
-      contains('refs/heads/master,refs/heads/beta,refs/heads/next,refs/heads/alpha', github.ref) &&
-      needs.validate.outputs.enable_release == 'true'
+      contains('refs/heads/master,refs/heads/beta,refs/heads/next,refs/heads/alpha', github.ref)
     steps:
       - name: Cancel Previous Runs
         uses: styfle/cancel-workflow-action@0.7.0
@@ -81,6 +76,7 @@ jobs:
           semantic_version: 17
           branches: |
             [
+              '+([0-9])?(.{+([0-9]),x}).x',
               'master',
               'next',
               'next-major',
