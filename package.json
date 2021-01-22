@@ -1,7 +1,7 @@
 {
   "name": "@kubajastrz/eslint-config-airbnb",
   "version": "0.0.0-semantically-released",
-  "description": "yyy zzz",
+  "description": "Airbnb-based eslint config supporting TypeScript & Prettier out-of-the-box",
   "repository": {
     "type": "git",
     "url": "https://github.com/kubajastrz/eslint-config.git"
@@ -35,6 +35,14 @@
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-testing-library": "^3.10.1"
+  },
+  "peerDependenciesMeta": {
+    "eslint-plugin-jest": {
+      "optional": true
+    },
+    "eslint-plugin-testing-library": {
+      "optional": true
+    }
   },
   "dependencies": {
     "clone-deep": "^4.0.1",
