@@ -1,5 +1,8 @@
 # @kubajastrz/eslint-config-airbnb
 
+<a href="https://www.npmjs.com/package/@kubajastrz/eslint-config-airbnb">
+  <img alt="npm package version" src="https://img.shields.io/npm/v/@kubajastrz/eslint-config-airbnb">
+<a>
 <a href="https://github.com/KubaJastrz/eslint-config/actions?query=workflow%3Amain">
   <img alt="Pipeline Validate Status" src="https://img.shields.io/github/workflow/status/KubaJastrz/eslint-config/main">
 <a>
