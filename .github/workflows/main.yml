@@ -44,9 +44,8 @@ jobs:
     name: release
     runs-on: ubuntu-18.04
     if:
-      ${{ github.event.pull_request.head.repo.full_name == github.repository &&
-      contains('refs/heads/master,refs/heads/beta,refs/heads/next,refs/heads/alpha',
-      github.ref) && github.event_name == 'push' }}
+      ${{ github.event_name == 'push' && github.event.push.repository.owner == github.repository_owner &&
+      contains('refs/heads/master,refs/heads/beta,refs/heads/next,refs/heads/alpha', github.ref) }}
     steps:
       - name: Cancel Previous Runs
         uses: styfle/cancel-workflow-action@0.7.0
