@@ -44,7 +44,7 @@ jobs:
     name: release
     runs-on: ubuntu-18.04
     if:
-      ${{ github.event_name == 'push' && github.event.push.repository.owner == github.repository_owner &&
+      ${{ github.event_name == 'push' && github.event.repository.owner == github.repository_owner &&
       contains('refs/heads/master,refs/heads/beta,refs/heads/next,refs/heads/alpha', github.ref) }}
     steps:
       - name: Cancel Previous Runs
