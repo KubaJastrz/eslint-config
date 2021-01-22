@@ -68,7 +68,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: cycjimmy/semantic-release-action@v2
+        uses: cycjimmy/semantic-release-action@v2
         with:
           semantic_version: 17
           branches: |
