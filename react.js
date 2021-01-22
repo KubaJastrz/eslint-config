@@ -2,9 +2,9 @@ module.exports = {
   extends: [
     'airbnb',
     'airbnb/hooks',
-    './rules/prettier.js',
+    require.resolve('./rules/prettier.js'),
     'prettier/react',
-    './rules/typescript.js',
+    require.resolve('./rules/typescript.js'),
   ],
   plugins: [],
   rules: {

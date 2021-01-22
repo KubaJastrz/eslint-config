@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['./react.js'],
+  extends: [require.resolve('./react.js')],
   plugins: [],
   rules: {},
 };

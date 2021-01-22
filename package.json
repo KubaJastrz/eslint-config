@@ -1,14 +1,14 @@
 {
-  "name": "eslint-config",
+  "name": "@kubajastrz/eslint-config-airbnb",
   "version": "0.0.0-semantically-released",
   "description": "yyy zzz",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yyy/zzz.git"
+    "url": "https://github.com/kubajastrz/eslint-config.git"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/yyy/zzz/issues"
+    "url": "https://github.com/kubajastrz/eslint-config/issues"
   },
   "files": [
     "rules/prettier.js",
